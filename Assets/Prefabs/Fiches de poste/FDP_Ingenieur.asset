@@ -15,10 +15,9 @@ MonoBehaviour:
   id: 1
   poste: 1
   visual: {fileID: 21300000, guid: 100cebcd4f080d548ae5c31ed9802e79, type: 3}
-  logo: {fileID: 0}
+  logo: {fileID: -480254276019886394, guid: 898048588e1981148b5e45e3ba681768, type: 3}
   linkedCandidatsList:
+  - {fileID: 11400000, guid: 796dbc7f5091f454880a6a2c75d76870, type: 2}
   - {fileID: 11400000, guid: e926adaf65cba0e4f9ca3d8b71fd1baf, type: 2}
   - {fileID: 11400000, guid: 1f642327c2126df4a92b350ec9f305c5, type: 2}
   - {fileID: 11400000, guid: c01bf6a11db9b5644a3628b82b050111, type: 2}
-  - {fileID: 11400000, guid: b6e0b1085fbfefb4bae5622214ea6e11, type: 2}
-  - {fileID: 11400000, guid: fe9c8012087dfc54892924da844a34ba, type: 2}
