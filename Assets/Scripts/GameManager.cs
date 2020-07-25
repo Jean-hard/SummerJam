@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,7 +32,12 @@ public class GameManager : MonoBehaviour
     public int candidatsMin = 2;
     public int candidatsMax = 5;
     private int fichesNb = 0;
-    private int candidatsNb = 0;    
+    private int candidatsNb = 0;
+
+    [Header("POINTS")]
+    public Text primeText;
+    public int prime = 0;
+    public int blame = 0;
 
     private bool timerIsRunning = false;
     private bool isStartValueUpdated = false;
@@ -97,12 +103,17 @@ public class GameManager : MonoBehaviour
                 }
                 else if (candidatsScreen.activeInHierarchy)
                 {
-                    candidatsScreen.SetActive(false);
-                    Debug.Log("Afficher score final");
+                    DisplayScoreScreen();
                     screenChanged = true;
                 }
             }
         }
+    }
+
+    public void AddPrime()
+    {
+        prime += 100;
+        UpdatePrimeText();
     }
 
     public void DisplayTime(float timeToDisplay)
@@ -121,8 +132,8 @@ public class GameManager : MonoBehaviour
         foreach (FichePoste fiche in fichesList)
             workFichesList.Add(fiche);
 
-        fichesNb = Random.Range(fichesMin, fichesMax + 1);
-        candidatsNb = Random.Range(candidatsMin, candidatsMax + 1);
+        fichesNb = UnityEngine.Random.Range(fichesMin, fichesMax + 1);
+        candidatsNb = UnityEngine.Random.Range(candidatsMin, candidatsMax + 1);
 
         Debug.Log("Nb fiches : " + fichesNb);
         Debug.Log("Nb candidats : " + candidatsNb);
@@ -157,7 +168,7 @@ public class GameManager : MonoBehaviour
 
     public FichePoste PickUnusedFiche()
     {        
-        int index = Random.Range(0, workFichesList.Count);  //On choisit un index random une fois
+        int index = UnityEngine.Random.Range(0, workFichesList.Count);  //On choisit un index random une fois
 
         FichePoste pickedFiche = workFichesList[index];
 
@@ -168,12 +179,23 @@ public class GameManager : MonoBehaviour
 
     public Candidat PickUnusedCandidat()
     {
-        int index = Random.Range(0, currentCandidatsList.Count);  //On choisit un index random une fois
+        int index = UnityEngine.Random.Range(0, currentCandidatsList.Count);  //On choisit un index random une fois
 
         Candidat pickedCandidat = currentCandidatsList[index];
 
         currentCandidatsList.RemoveAt(index);
 
         return pickedCandidat;
+    }
+
+    public void DisplayScoreScreen()
+    {
+        candidatsScreen.SetActive(false);
+        //scoreScreen.SetActive(true);
+    }
+
+    public void UpdatePrimeText() 
+    {
+        primeText.text = string.Format("{0:0000}", prime.ToString());
     }
 }

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Coloriste
   m_EditorClassIdentifier: 
   id: 0
-  poste: 1
+  poste: 0
   visual: {fileID: 21300000, guid: 88b7f92bf0403b448835ebd38447c9d8, type: 3}
+  logo: {fileID: 21300000, guid: c2d92aeb4d30dbd439786a2ce999a1b8, type: 3}
   linkedCandidatsList:
   - {fileID: 11400000, guid: 93bea1098a4104d4ba5c0632a418e8fe, type: 2}
   - {fileID: 11400000, guid: 1db2b4d9389a9d845aee27f1afb65201, type: 2}
