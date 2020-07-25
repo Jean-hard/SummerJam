@@ -5,16 +5,23 @@ using UnityEngine.UI;
 
 public class FicheScreenMgr : MonoBehaviour
 {
-    public GameObject fiche;
-    public List<Sprite> ficheSpriteList = new List<Sprite>();
+    public GameObject ficheObject;
+    private List<Sprite> _ficheSpriteList = new List<Sprite>();
 
     private int ficheIndex = 0;
 
     void Start()
     {
-        if (!fiche || ficheSpriteList.Count == 0) return;
+        GameManager.Instance.ChooseRandomFicheAndCandidats();
 
-        fiche.GetComponent<Image>().sprite = ficheSpriteList[ficheIndex];
+        foreach(FichePoste fiche in GameManager.Instance.pickedFiches)
+        {
+            _ficheSpriteList.Add(fiche.visual);
+        }
+
+        if (!ficheObject || _ficheSpriteList.Count == 0) return;
+
+        ficheObject.GetComponent<Image>().sprite = _ficheSpriteList[ficheIndex];
     }
 
     #region BUTTON FUNCTIONS
@@ -22,12 +29,12 @@ public class FicheScreenMgr : MonoBehaviour
     {
         ficheIndex++;
 
-        if(ficheIndex >= ficheSpriteList.Count)
+        if(ficheIndex >= _ficheSpriteList.Count)
         {
             ficheIndex = 0;
         }
 
-        fiche.GetComponent<Image>().sprite = ficheSpriteList[ficheIndex]; 
+        ficheObject.GetComponent<Image>().sprite = _ficheSpriteList[ficheIndex]; 
     }
 
     public void PreviousFiche()
@@ -36,12 +43,11 @@ public class FicheScreenMgr : MonoBehaviour
 
         if (ficheIndex < 0)
         {
-            ficheIndex = ficheSpriteList.Count - 1;
+            ficheIndex = _ficheSpriteList.Count - 1;
         }
 
-        fiche.GetComponent<Image>().sprite = ficheSpriteList[ficheIndex];
+        ficheObject.GetComponent<Image>().sprite = _ficheSpriteList[ficheIndex];
     }
     #endregion
-
 
 }

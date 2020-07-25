@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   poste: 1
-  visual: {fileID: 0}
+  visual: {fileID: 21300000, guid: ae34c43bd5f449d4db2c2181bfcbf260, type: 3}
   linkedCandidatsList:
   - {fileID: 11400000, guid: e926adaf65cba0e4f9ca3d8b71fd1baf, type: 2}
   - {fileID: 11400000, guid: 1f642327c2126df4a92b350ec9f305c5, type: 2}

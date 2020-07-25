@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
     public List<Candidat> candidatsList = new List<Candidat>();
     private List<FichePoste> workFichesList = new List<FichePoste>();
     private List<Candidat> currentCandidatsList = new List<Candidat>();
-    private List<FichePoste> pickedFiches = new List<FichePoste>();
-    private List<Candidat> pickedCandidats = new List<Candidat>();
+    [HideInInspector]
+    public List<FichePoste> pickedFiches = new List<FichePoste>();
+    [HideInInspector]
+    public List<Candidat> pickedCandidats = new List<Candidat>();
 
     [Header("SCENE OBJECTS")]
     public GameObject ficheScreen;
     public GameObject candidatsScreen;
+    public GameObject primePanel;
 
     [Header("TIMER")]
     public Text timerText;
@@ -40,13 +43,17 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
     #endregion
 
+    void Awake()
+    {
+        if (_instance == null)
+        {
+
+            _instance = this;
+        }
+    }
+
     private void Start()
     {
-        //ChooseRandomFicheAndCandidats();
-        
-        foreach (FichePoste fiche in fichesList)
-            workFichesList.Add(fiche);            
-
         timerIsRunning = true;
     }
 
@@ -78,14 +85,13 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Fin du timer !");
-
                 if (screenChanged) return;
 
                 if (ficheScreen.activeInHierarchy)
                 {
                     ficheScreen.SetActive(false);
                     candidatsScreen.SetActive(true);
+                    primePanel.SetActive(true);
                     isStartValueUpdated = false;
                     screenChanged = true;
                 }
@@ -97,9 +103,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-
-        if(Input.GetKeyDown(KeyCode.Space))
-            ChooseRandomFicheAndCandidats();
     }
 
     public void DisplayTime(float timeToDisplay)
@@ -112,8 +115,12 @@ public class GameManager : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
+    //Appelée par FicheScreenMgr au start
     public void ChooseRandomFicheAndCandidats()
     {
+        foreach (FichePoste fiche in fichesList)
+            workFichesList.Add(fiche);
+
         fichesNb = Random.Range(fichesMin, fichesMax + 1);
         candidatsNb = Random.Range(candidatsMin, candidatsMax + 1);
 
@@ -125,7 +132,7 @@ public class GameManager : MonoBehaviour
         {
             FichePoste fiche = PickUnusedFiche();
             pickedFiches.Add(fiche);
-            Debug.Log("Fiche picked : " + fiche.name);
+            //Debug.Log("Fiche picked : " + fiche.name);
         }
 
         //Pour chaque fiche, on ajoute X candidats associés à la fiche, à la liste de candidats choisis
@@ -141,7 +148,7 @@ public class GameManager : MonoBehaviour
             {
                 Candidat candidat = PickUnusedCandidat();
                 pickedCandidats.Add(candidat);
-                Debug.Log("Candidat picked : " + candidat.name);
+                //Debug.Log("Candidat picked : " + candidat.name);
             }
         }
 
