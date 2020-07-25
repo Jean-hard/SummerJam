@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   metier: 1
-  avatar: {fileID: 0}
+  avatar: {fileID: 810325795073249215, guid: 60ff561354709f547b4a037925944f23, type: 3}
   voice: {fileID: 8300000, guid: 2203740e2372a4441bb6e354d89babb8, type: 3}
