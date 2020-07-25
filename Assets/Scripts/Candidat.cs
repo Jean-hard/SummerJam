@@ -8,7 +8,11 @@ public enum Metier
     Ingenieur,
     Stenographe,
     Historien,
-    GardeChausse
+    GardeChausse,
+    Batteur,
+    Gramatteur,
+    Planteur,
+    Animateur
 }
 
 [CreateAssetMenu(fileName = "Candidat", menuName = "Candidat")]
