@@ -12,7 +12,8 @@ public enum Metier
     Batteur,
     Gramatteur,
     Planteur,
-    Animateur
+    Animateur,
+    Comptable
 }
 
 [CreateAssetMenu(fileName = "Candidat", menuName = "Candidat")]
