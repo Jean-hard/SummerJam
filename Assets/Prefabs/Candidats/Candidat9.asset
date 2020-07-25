@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Candidat9
   m_EditorClassIdentifier: 
   id: 9
-  metier: 1
+  metier: 2
   avatar: {fileID: 0}
   voice: {fileID: 0}
