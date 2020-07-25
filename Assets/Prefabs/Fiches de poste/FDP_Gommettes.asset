@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e62a4d3cb7c62842bd64ee2f12b8696, type: 3}
-  m_Name: Coloriste
+  m_Name: FDP_Gommettes
   m_EditorClassIdentifier: 
   id: 0
   poste: 0
-  visual: {fileID: 21300000, guid: 88b7f92bf0403b448835ebd38447c9d8, type: 3}
+  visual: {fileID: 21300000, guid: 5aaaea52754fd9f43b0bd56820cb8d58, type: 3}
   logo: {fileID: 21300000, guid: c2d92aeb4d30dbd439786a2ce999a1b8, type: 3}
   linkedCandidatsList:
   - {fileID: 11400000, guid: 93bea1098a4104d4ba5c0632a418e8fe, type: 2}

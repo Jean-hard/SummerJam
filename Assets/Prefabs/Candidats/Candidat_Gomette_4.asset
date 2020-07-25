@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb68b6183eec315429e81e8b7a55fa84, type: 3}
-  m_Name: Candidat9
+  m_Name: Candidat_Gomette_4
   m_EditorClassIdentifier: 
-  id: 9
-  metier: 2
-  avatar: {fileID: 0}
-  voice: {fileID: 0}
+  id: 4
+  metier: 0
+  avatar: {fileID: 21300000, guid: acda28b4eebc68948af00cdad3f4c33f, type: 3}
+  voice: {fileID: 8300000, guid: 5ec2146747de9e240b4152b4493635ca, type: 3}
