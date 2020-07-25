@@ -196,6 +196,6 @@ public class GameManager : MonoBehaviour
 
     public void UpdatePrimeText() 
     {
-        primeText.text = string.Format("{0:0000}", prime.ToString());
+        primeText.text = prime.ToString("0000");
     }
 }
