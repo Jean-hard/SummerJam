@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("DATABASE")]
     public List<FichePoste> fichesList = new List<FichePoste>();
-    public List<Candidat> candidatsList = new List<Candidat>();
+    //public List<Candidat> candidatsList = new List<Candidat>();
     private List<FichePoste> workFichesList = new List<FichePoste>();
     private List<Candidat> currentCandidatsList = new List<Candidat>();
     [HideInInspector]
@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timerText.text = string.Format("{0:00}  {1:00}", minutes, seconds);
     }
 
     //Appelée par FicheScreenMgr au start

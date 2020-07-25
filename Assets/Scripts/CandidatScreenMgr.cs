@@ -57,7 +57,7 @@ public class CandidatScreenMgr : MonoBehaviour
 
     public void UpdateCandidatCounterText()
     {
-        candidatsCounterText.text = string.Format("{0} / {1}", candidatsCounter, GameManager.Instance.pickedCandidats.Count);
+        candidatsCounterText.text = string.Format("{0}    {1}", candidatsCounter, GameManager.Instance.pickedCandidats.Count);
     }
 
     //Affiche l'avatar, joue le son du candidat courrant
