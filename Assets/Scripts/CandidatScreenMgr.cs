@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CandidatScreenMgr : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("SCENE OBJECTS")]
+    public GameObject candidatAvatar;
+    public List<GameObject> choiceButtons;
+    public List<GameObject> remainingCandidatsAvatar;
+    public Text remainingCandidatsCounter;
+
+
+    public void SetupGUIValues()
     {
-        
+        //Setup les fiches sélectionnées et les candidats sélectionnés
+        //Les afficher à l'écran
+        //Setup les valeurs numériques
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

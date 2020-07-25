@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e62a4d3cb7c62842bd64ee2f12b8696, type: 3}
+  m_Name: Coloriste
+  m_EditorClassIdentifier: 
+  id: 0
+  poste: 1
+  visual: {fileID: 0}
+  linkedCandidatsList:
+  - {fileID: 11400000, guid: 93bea1098a4104d4ba5c0632a418e8fe, type: 2}
+  - {fileID: 11400000, guid: 1db2b4d9389a9d845aee27f1afb65201, type: 2}
+  - {fileID: 11400000, guid: c7de46077ce8362419ba84a4d28c391e, type: 2}
+  - {fileID: 11400000, guid: ef92a09db5dbb3f42975c2888f40535e, type: 2}
+  - {fileID: 11400000, guid: 796dbc7f5091f454880a6a2c75d76870, type: 2}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e62a4d3cb7c62842bd64ee2f12b8696, type: 3}
+  m_Name: Stenographe
+  m_EditorClassIdentifier: 
+  id: 2
+  poste: 2
+  visual: {fileID: 0}
+  linkedCandidatsList:
+  - {fileID: 11400000, guid: 90abb22a079d80e439618d6180a98fbc, type: 2}
+  - {fileID: 11400000, guid: 2da9a4bca703cba4f94893f3ac9dd5e6, type: 2}
+  - {fileID: 11400000, guid: 4820e42d8c93b3049aa0be12d94542b2, type: 2}
+  - {fileID: 11400000, guid: 6e6a33a2a373ec142b1503c61199bd24, type: 2}
+  - {fileID: 11400000, guid: ddaee1a7b3aada448b1cf001407ca8cb, type: 2}

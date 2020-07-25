@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e62a4d3cb7c62842bd64ee2f12b8696, type: 3}
+  m_Name: Ingenieur
+  m_EditorClassIdentifier: 
+  id: 1
+  poste: 1
+  visual: {fileID: 0}
+  linkedCandidatsList:
+  - {fileID: 11400000, guid: e926adaf65cba0e4f9ca3d8b71fd1baf, type: 2}
+  - {fileID: 11400000, guid: 1f642327c2126df4a92b350ec9f305c5, type: 2}
+  - {fileID: 11400000, guid: c01bf6a11db9b5644a3628b82b050111, type: 2}
+  - {fileID: 11400000, guid: b6e0b1085fbfefb4bae5622214ea6e11, type: 2}
+  - {fileID: 11400000, guid: fe9c8012087dfc54892924da844a34ba, type: 2}
