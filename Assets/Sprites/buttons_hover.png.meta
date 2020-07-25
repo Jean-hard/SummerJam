@@ -7,34 +7,34 @@ TextureImporter:
     second: buttons_hover_back
   - first:
       213: 4208035601096347960
-    second: buttons_hover_1
+    second: buttons_hover_Gommettes
   - first:
       213: -8508573455113651935
-    second: buttons_hover_2
+    second: buttons_hover_Ingenieur
   - first:
       213: -1664049105502978203
-    second: buttons_hover_3
+    second: buttons_hover_Stenographe
   - first:
       213: 3025287283539184856
-    second: buttons_hover_4
+    second: buttons_hover_Historien
   - first:
       213: 9029331512916936289
-    second: buttons_hover_5
+    second: buttons_hover_Comptable
   - first:
       213: 4142059904084754950
-    second: buttons_hover_6
+    second: buttons_hover_GardeChausse
   - first:
       213: -1250715391159631162
-    second: buttons_hover_7
+    second: buttons_hover_BatteurBois
   - first:
       213: -5803386631655561105
-    second: buttons_hover_8
+    second: buttons_hover_ArtisteGramatteur
   - first:
       213: 8118831065890826443
-    second: buttons_hover_9
+    second: buttons_hover_Planteur
   - first:
       213: 407053271475990391
-    second: buttons_hover_10
+    second: buttons_hover_Animateur
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -143,7 +143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_1
+      name: buttons_hover_Gommettes
       rect:
         serializedVersion: 2
         x: 144
@@ -164,7 +164,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_2
+      name: buttons_hover_Ingenieur
       rect:
         serializedVersion: 2
         x: 268
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_3
+      name: buttons_hover_Stenographe
       rect:
         serializedVersion: 2
         x: 16
@@ -206,7 +206,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_4
+      name: buttons_hover_Historien
       rect:
         serializedVersion: 2
         x: 144
@@ -227,7 +227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_5
+      name: buttons_hover_Comptable
       rect:
         serializedVersion: 2
         x: 272
@@ -248,7 +248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_6
+      name: buttons_hover_GardeChausse
       rect:
         serializedVersion: 2
         x: 16
@@ -269,7 +269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_7
+      name: buttons_hover_BatteurBois
       rect:
         serializedVersion: 2
         x: 144
@@ -290,7 +290,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_8
+      name: buttons_hover_ArtisteGramatteur
       rect:
         serializedVersion: 2
         x: 268
@@ -311,7 +311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_9
+      name: buttons_hover_Planteur
       rect:
         serializedVersion: 2
         x: 18
@@ -332,7 +332,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_hover_10
+      name: buttons_hover_Animateur
       rect:
         serializedVersion: 2
         x: 145
@@ -340,7 +340,7 @@ TextureImporter:
         width: 96
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

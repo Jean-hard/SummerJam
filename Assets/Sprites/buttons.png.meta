@@ -7,34 +7,34 @@ TextureImporter:
     second: buttons_back
   - first:
       213: 3713549098536957005
-    second: buttons_1
+    second: buttons_Gommette
   - first:
       213: -480254276019886394
-    second: buttons_2
+    second: buttons_Ingenieur
   - first:
       213: -6460607209241108654
-    second: buttons_3
+    second: buttons_Stenographe
   - first:
       213: 2958514102543403041
-    second: buttons_4
+    second: buttons_Historien
   - first:
       213: 1008705478319212569
-    second: buttons_5
+    second: buttons_Comptable
   - first:
       213: -3219683103784253410
-    second: buttons_6
+    second: buttons_GardeChausse
   - first:
       213: 5830344958925785552
-    second: buttons_7
+    second: buttons_BatteurBois
   - first:
       213: 650656284835190746
-    second: buttons_8
+    second: buttons_ArtisteGrammateur
   - first:
       213: 4009284081192125275
-    second: buttons_9
+    second: buttons_Planteur
   - first:
       213: 8359661988393023892
-    second: buttons_10
+    second: buttons_Animateur
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -143,7 +143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_1
+      name: buttons_Gommette
       rect:
         serializedVersion: 2
         x: 144
@@ -164,7 +164,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_2
+      name: buttons_Ingenieur
       rect:
         serializedVersion: 2
         x: 268
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_3
+      name: buttons_Stenographe
       rect:
         serializedVersion: 2
         x: 16
@@ -206,7 +206,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_4
+      name: buttons_Historien
       rect:
         serializedVersion: 2
         x: 144
@@ -227,7 +227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_5
+      name: buttons_Comptable
       rect:
         serializedVersion: 2
         x: 272
@@ -248,7 +248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_6
+      name: buttons_GardeChausse
       rect:
         serializedVersion: 2
         x: 16
@@ -269,7 +269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_7
+      name: buttons_BatteurBois
       rect:
         serializedVersion: 2
         x: 144
@@ -290,7 +290,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_8
+      name: buttons_ArtisteGrammateur
       rect:
         serializedVersion: 2
         x: 268
@@ -311,7 +311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_9
+      name: buttons_Planteur
       rect:
         serializedVersion: 2
         x: 16
@@ -332,7 +332,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttons_10
+      name: buttons_Animateur
       rect:
         serializedVersion: 2
         x: 144
