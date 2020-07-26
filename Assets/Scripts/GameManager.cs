@@ -25,11 +25,17 @@ public class GameManager : MonoBehaviour
     public GameObject ficheScreen;
     public GameObject candidatsScreen;
     public Text metierTitle;
-    public AudioSource audio;
+    
 
-    public GameObject primePanel;
+    [Header("SOUNDS")]
+    public AudioSource audioVoices;
+    public AudioSource audioSfx;
+    public AudioSource audioMusic;
+    public List<AudioClip> sfxList = new List<AudioClip>();
+    public AudioClip music;
 
     [Header("TIMER")]
+    public GameObject timerBox;
     public Text timerText;
     public List<float> timerStartValues = new List<float>();
     private float timerValue = 0;
@@ -43,6 +49,7 @@ public class GameManager : MonoBehaviour
     private int candidatsNb = 0;
 
     [Header("POINTS")]
+    public GameObject primePanel;
     public Text primeText;
     public int prime = 0;
     public int blame = 0;
@@ -73,6 +80,8 @@ public class GameManager : MonoBehaviour
     {
         Cursor.SetCursor(pointerSprite, UnityEngine.Vector2.zero, CursorMode.ForceSoftware); 
         timerIsRunning = true;
+
+        PlayMusic();
     }
 
     // Update is called once per frame
@@ -103,6 +112,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                PlaySfx(sfxList[3]);
+
                 if (screenChanged) return;
 
                 if (ficheScreen.activeInHierarchy)
@@ -127,6 +138,8 @@ public class GameManager : MonoBehaviour
     {
         prime += 100;
         UpdatePrimeText();
+
+        PlaySfx(sfxList[2]);
     }
 
     public void DisplayTime(float timeToDisplay)
@@ -204,6 +217,8 @@ public class GameManager : MonoBehaviour
     public void DisplayScoreScreen()
     {
         candidatsScreen.SetActive(false);
+        timerBox.SetActive(false);
+        primePanel.SetActive(false);
         //scoreScreen.SetActive(true);
     }
 
@@ -219,12 +234,34 @@ public class GameManager : MonoBehaviour
 
     public void PlayVoice(AudioClip clip)
     {
-        audio.clip = clip;
-        audio.Play();
+        audioVoices.clip = clip;
+        audioVoices.Play();
     }
 
     public void StopVoice()
     {
-        audio.Stop();
+        audioVoices.Stop();
+    }
+
+    public void PlaySfx(AudioClip clip)
+    {
+        audioSfx.clip = clip;
+        audioSfx.Play();
+    }
+
+    public void StopSfx()
+    {
+        audioSfx.Stop();
+    }
+
+    public void PlayMusic()
+    {
+        audioMusic.clip = music;
+        audioMusic.Play();
+    }
+
+    public void StopMusic()
+    {
+        audioMusic.Stop();
     }
 }

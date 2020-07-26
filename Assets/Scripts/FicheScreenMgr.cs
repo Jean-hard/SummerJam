@@ -29,6 +29,8 @@ public class FicheScreenMgr : MonoBehaviour
     {
         ficheIndex++;
 
+        GameManager.Instance.PlaySfx(GameManager.Instance.sfxList[1]);
+
         if(ficheIndex >= _ficheSpriteList.Count)
         {
             ficheIndex = 0;
@@ -40,6 +42,8 @@ public class FicheScreenMgr : MonoBehaviour
     public void PreviousFiche()
     {
         ficheIndex--;
+
+        GameManager.Instance.PlaySfx(GameManager.Instance.sfxList[1]);
 
         if (ficheIndex < 0)
         {
