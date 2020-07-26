@@ -10,6 +10,12 @@ public class CandidatScreenMgr : MonoBehaviour
     public List<GameObject> choiceButtons;
     //public List<GameObject> remainingCandidatsAvatar;
     public Text candidatsCounterText;
+
+    [Header("MAIN WINDOW")]
+    public GameObject mainWindow;
+    public List<Sprite> mainWindowSprites = new List<Sprite>();
+
+    [Header("BLAME")]
     public GameObject blamePopUp;
     public Text blameCounterText;
     
@@ -48,6 +54,7 @@ public class CandidatScreenMgr : MonoBehaviour
         currentCandidat = remainingCandidatsList[candidatsCounter];
 
         DisplayCurrentCandidat();
+        StartCoroutine(SpeakAnim());
 
         UpdateCandidatCounterText();
 
@@ -79,10 +86,11 @@ public class CandidatScreenMgr : MonoBehaviour
         if (candidatsCounter < GameManager.Instance.pickedCandidats.Count)
         {
             currentCandidat = remainingCandidatsList[candidatsCounter];
-
+            
+            StartCoroutine(SpeakAnim());
             DisplayCurrentCandidat();
 
-            UpdateCandidatCounterText();
+            UpdateCandidatCounterText();            
         }
         else
         {
@@ -190,5 +198,40 @@ public class CandidatScreenMgr : MonoBehaviour
             remainingCandidatsList[i] = remainingCandidatsList[randomIndex];
             remainingCandidatsList[randomIndex] = temp;
         }
+    }
+
+    IEnumerator SpeakAnim()
+    {
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[1];
+        yield return new WaitForSeconds(1.5f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[0];
+        yield return new WaitForSeconds(.5f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[1];
+        yield return new WaitForSeconds(1f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[0];
+        yield return new WaitForSeconds(.2f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[1];
+        yield return new WaitForSeconds(.5f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[0];
+        yield return new WaitForSeconds(.2f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[1];
+        yield return new WaitForSeconds(2f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[0];
+        yield return new WaitForSeconds(.5f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[1];
+        yield return new WaitForSeconds(1.5f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[0];
+        yield return new WaitForSeconds(.5f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[1];
+        yield return new WaitForSeconds(1f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[0];
+        yield return new WaitForSeconds(.2f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[1];
+        yield return new WaitForSeconds(.5f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[0];
+        yield return new WaitForSeconds(.2f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[1];
+        yield return new WaitForSeconds(2f);
+        mainWindow.GetComponent<Image>().sprite = mainWindowSprites[0];
     }
 }
