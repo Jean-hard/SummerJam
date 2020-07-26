@@ -10,9 +10,12 @@ public class CandidatScreenMgr : MonoBehaviour
     public List<GameObject> choiceButtons;
     //public List<GameObject> remainingCandidatsAvatar;
     public Text candidatsCounterText;
+    public GameObject blamePopUp;
+    public Text blameCounterText;
     
     public Sprite backButton;
 
+    private int blameCounter = 0;
     private int candidatsCounter = 0;
     private int nbChoices = 0;
 
@@ -32,13 +35,9 @@ public class CandidatScreenMgr : MonoBehaviour
         }
     }
 
+    //Set l'UI à l'ouverture du screen candidats
     public void SetupScreen()
     {
-        //Les afficher à l'écran
-        //Setup les valeurs numériques
-
-
-
         foreach (Candidat candidat in GameManager.Instance.pickedCandidats)
         {
             remainingCandidatsList.Add(candidat);   //On place tous les candidats dans une liste modifiable
@@ -62,7 +61,7 @@ public class CandidatScreenMgr : MonoBehaviour
 
     public void UpdateCandidatCounterText()
     {
-        candidatsCounterText.text = string.Format("{0}    {1}", candidatsCounter, GameManager.Instance.pickedCandidats.Count);
+        candidatsCounterText.text = string.Format("{0} / {1}", candidatsCounter, GameManager.Instance.pickedCandidats.Count);
     }
 
     //Affiche l'avatar, joue le son du candidat courrant
@@ -118,6 +117,20 @@ public class CandidatScreenMgr : MonoBehaviour
         }
     }
 
+    public IEnumerator LaunchBlame()
+    {
+        GameManager.Instance.StopVoice();
+        blamePopUp.SetActive(true);
+        blameCounterText.text = string.Format("{0} / 3", blameCounter);        
+        yield return new WaitForSeconds(3f);
+        blamePopUp.SetActive(false);
+
+        if (blameCounter < 3)
+            LaunchNextCandidat();
+        else
+            GameManager.Instance.DisplayScoreScreen();
+    }
+
     //Vérifie l'exactitude du choix du joueur en fonction du candidat présent
     public void CheckAnswer(Metier metierChoosed)
     {
@@ -125,15 +138,15 @@ public class CandidatScreenMgr : MonoBehaviour
         {
             //Ajoute des primes
             GameManager.Instance.AddPrime();
+            //Next candidat
+            LaunchNextCandidat();
         }
         else
         {
             //Prend un blame
-            Debug.Log("Prend un blame");
+            blameCounter++;
+            StartCoroutine(LaunchBlame());
         }
-
-        //Next candidat
-        LaunchNextCandidat();
     }
 
 
