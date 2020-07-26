@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
@@ -46,6 +47,9 @@ public class GameManager : MonoBehaviour
     public int prime = 0;
     public int blame = 0;
 
+    [Header("CURSOR")]
+    public Texture2D pointerSprite;
+
     private bool timerIsRunning = false;
     private bool isStartValueUpdated = false;
     private bool screenChanged = false;
@@ -67,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.SetCursor(pointerSprite, UnityEngine.Vector2.zero, CursorMode.ForceSoftware); 
         timerIsRunning = true;
     }
 
