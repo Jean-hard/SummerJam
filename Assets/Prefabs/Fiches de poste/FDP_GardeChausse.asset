@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: FDP_GardeChausse
   m_EditorClassIdentifier: 
   id: 2
+  metierName: Garde Chausse
   poste: 4
   visual: {fileID: 21300000, guid: d81411bb38506464187f6dd933925426, type: 3}
   logo: {fileID: -3219683103784253410, guid: 898048588e1981148b5e45e3ba681768, type: 3}
+  hoverLogo: {fileID: 4142059904084754950, guid: 97d9bd3543f48514f82d9a3c0c0813d0, type: 3}
   linkedCandidatsList:
   - {fileID: 11400000, guid: 0c06d91e9f17b3548b6565b0ad7d4df6, type: 2}
   - {fileID: 11400000, guid: d08f3ab4736fd724399bf186419c1115, type: 2}

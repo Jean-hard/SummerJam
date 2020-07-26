@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: FDP_Stenographe
   m_EditorClassIdentifier: 
   id: 2
+  metierName: "St\xE9nographe"
   poste: 2
   visual: {fileID: 21300000, guid: 7adac770b0061e347a8e16ebc11dd8ea, type: 3}
   logo: {fileID: -6460607209241108654, guid: 898048588e1981148b5e45e3ba681768, type: 3}
+  hoverLogo: {fileID: -1664049105502978203, guid: 97d9bd3543f48514f82d9a3c0c0813d0, type: 3}
   linkedCandidatsList:
   - {fileID: 11400000, guid: b6e0b1085fbfefb4bae5622214ea6e11, type: 2}
   - {fileID: 11400000, guid: fe9c8012087dfc54892924da844a34ba, type: 2}

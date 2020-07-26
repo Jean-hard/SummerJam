@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -15,10 +16,16 @@ public class GameManager : MonoBehaviour
     public List<FichePoste> pickedFiches = new List<FichePoste>();
     [HideInInspector]
     public List<Candidat> pickedCandidats = new List<Candidat>();
+    public List<Sprite> hoverLogoSpritesList = new List<Sprite>();
+    public List<Metier> hoverLogoMetierList = new List<Metier>();
+    
 
     [Header("SCENE OBJECTS")]
     public GameObject ficheScreen;
     public GameObject candidatsScreen;
+    public Text metierTitle;
+    public AudioSource audio;
+
     public GameObject primePanel;
 
     [Header("TIMER")]
@@ -103,6 +110,7 @@ public class GameManager : MonoBehaviour
                 }
                 else if (candidatsScreen.activeInHierarchy)
                 {
+                    StopVoice();
                     DisplayScoreScreen();
                     screenChanged = true;
                 }
@@ -197,5 +205,21 @@ public class GameManager : MonoBehaviour
     public void UpdatePrimeText() 
     {
         primeText.text = prime.ToString("0000");
+    }
+
+    public void UpdateBtnName(FichePoste fiche)
+    {
+        metierTitle.text = fiche.metierName;
+    }
+
+    public void PlayVoice(AudioClip clip)
+    {
+        audio.clip = clip;
+        audio.Play();
+    }
+
+    public void StopVoice()
+    {
+        audio.Stop();
     }
 }

@@ -10,7 +10,8 @@ public class CandidatScreenMgr : MonoBehaviour
     public List<GameObject> choiceButtons;
     //public List<GameObject> remainingCandidatsAvatar;
     public Text candidatsCounterText;
-    public AudioSource audio;
+    
+    public Sprite backButton;
 
     private int candidatsCounter = 0;
     private int nbChoices = 0;
@@ -36,10 +37,14 @@ public class CandidatScreenMgr : MonoBehaviour
         //Les afficher à l'écran
         //Setup les valeurs numériques
 
+
+
         foreach (Candidat candidat in GameManager.Instance.pickedCandidats)
         {
             remainingCandidatsList.Add(candidat);   //On place tous les candidats dans une liste modifiable
         }
+
+        ShuffleCandidatsList(); //On mélange la liste de candidats 
 
         currentCandidat = remainingCandidatsList[candidatsCounter];
 
@@ -64,8 +69,7 @@ public class CandidatScreenMgr : MonoBehaviour
     public void DisplayCurrentCandidat()
     {
         candidatAvatar.GetComponent<Image>().sprite = currentCandidat.avatar;
-        audio.clip = currentCandidat.voice;
-        audio.Play();
+        GameManager.Instance.PlayVoice(currentCandidat.voice);
     }
 
     //Affiche le candidat suivant
@@ -84,7 +88,7 @@ public class CandidatScreenMgr : MonoBehaviour
         else
         {
             //Afficher écran de score
-            audio.Stop();
+            GameManager.Instance.StopVoice();
             GameManager.Instance.DisplayScoreScreen();
             Debug.Log("FINITO");
         }
@@ -102,7 +106,8 @@ public class CandidatScreenMgr : MonoBehaviour
             if(nbChoices > 0)
             {
                 button.SetActive(true);
-                button.GetComponent<Image>().sprite = GameManager.Instance.pickedFiches[index].logo;
+                button.GetComponent<Image>().sprite = backButton;
+                button.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = GameManager.Instance.pickedFiches[index].logo;
                 nbChoices--;
                 index++;
             }
@@ -161,5 +166,16 @@ public class CandidatScreenMgr : MonoBehaviour
     public void ChooseFive()
     {
         CheckAnswer(choiceList[4]);
+    }
+
+    public void ShuffleCandidatsList()
+    {
+        for (int i = 0; i < remainingCandidatsList.Count; i++)
+        {
+            Candidat temp = remainingCandidatsList[i];
+            int randomIndex = Random.Range(i, remainingCandidatsList.Count);
+            remainingCandidatsList[i] = remainingCandidatsList[randomIndex];
+            remainingCandidatsList[randomIndex] = temp;
+        }
     }
 }
