@@ -19,9 +19,10 @@ public class GameManager : MonoBehaviour
     public List<Candidat> pickedCandidats = new List<Candidat>();
     public List<Sprite> hoverLogoSpritesList = new List<Sprite>();
     public List<Metier> hoverLogoMetierList = new List<Metier>();
-    
+
 
     [Header("SCENE OBJECTS")]
+    public GameObject startScreen;
     public GameObject ficheScreen;
     public GameObject candidatsScreen;
     public Text metierTitle;
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
     public GameObject timerBox;
     public Text timerText;
     public List<float> timerStartValues = new List<float>();
-    private float timerValue = 0;
+    private float timerValue = 100;
 
     [Header("VALUES")]
     public int fichesMin = 2;
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
     public Texture2D pointerSprite;
 
     private bool timerIsRunning = false;
-    private bool isStartValueUpdated = false;
+    private bool isStartValueUpdated = true;
     private bool screenChanged = false;
 
     #region Singleton Pattern
@@ -78,8 +79,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Cursor.SetCursor(pointerSprite, UnityEngine.Vector2.zero, CursorMode.ForceSoftware); 
-        timerIsRunning = true;
+        Cursor.SetCursor(pointerSprite, UnityEngine.Vector2.zero, CursorMode.ForceSoftware);
+        ChooseRandomFicheAndCandidats();
 
         PlayMusic();
     }
@@ -89,11 +90,7 @@ public class GameManager : MonoBehaviour
     {
         if(!isStartValueUpdated)
         {
-            if (ficheScreen.activeInHierarchy)
-            {
-                timerValue = timerStartValues[0] * pickedFiches.Count;
-            }
-            else if (candidatsScreen.activeInHierarchy)
+            if (candidatsScreen.activeInHierarchy)
             {
                 timerValue = timerStartValues[1] * pickedCandidats.Count;
             }
@@ -132,6 +129,20 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    //Appelé par le bouton Play du start screen
+    public void StartGame()
+    {
+        timerValue = timerStartValues[0] * pickedFiches.Count;
+
+        screenChanged = false;
+
+        startScreen.SetActive(false);
+        ficheScreen.SetActive(true);
+        timerBox.SetActive(true);
+        //primePanel.SetActive(true);
+        timerIsRunning = true;
     }
 
     public void AddPrime()
