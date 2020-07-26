@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -286,5 +287,10 @@ public class GameManager : MonoBehaviour
     public void StopMusic()
     {
         audioMusic.Stop();
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(0);
     }
 }
