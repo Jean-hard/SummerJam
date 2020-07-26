@@ -2361,7 +2361,7 @@ MonoBehaviour:
   primePanel: {fileID: 748443538}
   timerText: {fileID: 1644781897}
   timerStartValues:
-  - 5
+  - 10
   - 20
   fichesMin: 3
   fichesMax: 5
