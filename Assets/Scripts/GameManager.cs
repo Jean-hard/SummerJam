@@ -294,4 +294,9 @@ public class GameManager : MonoBehaviour
         PlaySfx(sfxList[1]);
         SceneManager.LoadScene(0);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
