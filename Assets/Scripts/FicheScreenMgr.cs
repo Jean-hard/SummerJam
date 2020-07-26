@@ -12,8 +12,6 @@ public class FicheScreenMgr : MonoBehaviour
 
     void Start()
     {
-        GameManager.Instance.ChooseRandomFicheAndCandidats();
-
         foreach(FichePoste fiche in GameManager.Instance.pickedFiches)
         {
             _ficheSpriteList.Add(fiche.visual);
