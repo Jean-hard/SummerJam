@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject startScreen;
     public GameObject ficheScreen;
     public GameObject candidatsScreen;
+    public GameObject gameOverScreen;
     public Text metierTitle;
     
 
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
     public GameObject timerBox;
     public Text timerText;
     public List<float> timerStartValues = new List<float>();
-    private float timerValue = 100;
+    public float timerValue = 0;
 
     [Header("VALUES")]
     public int fichesMin = 2;
@@ -52,8 +53,10 @@ public class GameManager : MonoBehaviour
     [Header("POINTS")]
     public GameObject primePanel;
     public Text primeText;
+    [HideInInspector]
     public int prime = 0;
-    public int blame = 0;
+    public int primeBonus = 100;
+    public int blameMalus = 50;
 
     [Header("CURSOR")]
     public Texture2D pointerSprite;
@@ -64,6 +67,7 @@ public class GameManager : MonoBehaviour
 
     #region Singleton Pattern
     private static GameManager _instance;
+    
 
     public static GameManager Instance { get { return _instance; } }
     #endregion
@@ -124,7 +128,7 @@ public class GameManager : MonoBehaviour
                 else if (candidatsScreen.activeInHierarchy)
                 {
                     StopVoice();
-                    DisplayScoreScreen();
+                    DisplayScoreScreen(false);
                     screenChanged = true;
                 }
             }
@@ -143,16 +147,21 @@ public class GameManager : MonoBehaviour
         startScreen.SetActive(false);
         ficheScreen.SetActive(true);
         timerBox.SetActive(true);
-        //primePanel.SetActive(true);
         timerIsRunning = true;
     }
 
     public void AddPrime()
     {
-        prime += 100;
+        prime += primeBonus;
         UpdatePrimeText();
 
         PlaySfx(sfxList[2]);
+    }
+
+    public void AddBlameMalus()
+    {
+        prime -= blameMalus;
+        UpdatePrimeText();
     }
 
     public void DisplayTime(float timeToDisplay)
@@ -227,12 +236,13 @@ public class GameManager : MonoBehaviour
         return pickedCandidat;
     }
 
-    public void DisplayScoreScreen()
+    public void DisplayScoreScreen(bool gameWon)
     {
         candidatsScreen.SetActive(false);
         timerBox.SetActive(false);
         primePanel.SetActive(false);
-        //scoreScreen.SetActive(true);
+        gameOverScreen.SetActive(true);
+        GameOverScreenMgr.Instance.DisplayMessageAndScore(gameWon);
     }
 
     public void UpdatePrimeText() 

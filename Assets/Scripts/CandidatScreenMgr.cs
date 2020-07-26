@@ -96,8 +96,8 @@ public class CandidatScreenMgr : MonoBehaviour
         {
             //Afficher écran de score
             GameManager.Instance.StopVoice();
-            GameManager.Instance.DisplayScoreScreen();
-            Debug.Log("FINITO");
+            GameManager.Instance.DisplayScoreScreen(true);
+            Debug.Log("WIN");
         }
     }
 
@@ -137,7 +137,7 @@ public class CandidatScreenMgr : MonoBehaviour
         if (blameCounter < 3)
             LaunchNextCandidat();
         else
-            GameManager.Instance.DisplayScoreScreen();
+            GameManager.Instance.DisplayScoreScreen(false);
     }
 
     //Vérifie l'exactitude du choix du joueur en fonction du candidat présent
@@ -155,6 +155,7 @@ public class CandidatScreenMgr : MonoBehaviour
         {
             //Prend un blame
             blameCounter++;
+            GameManager.Instance.AddBlameMalus();
             StartCoroutine(LaunchBlame());
         }
     }
