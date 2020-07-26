@@ -134,6 +134,8 @@ public class GameManager : MonoBehaviour
     //Appelé par le bouton Play du start screen
     public void StartGame()
     {
+        PlaySfx(sfxList[1]);
+
         timerValue = timerStartValues[0] * pickedFiches.Count;
 
         screenChanged = false;
