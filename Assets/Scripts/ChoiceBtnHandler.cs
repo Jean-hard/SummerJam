@@ -25,6 +25,8 @@ public class ChoiceBtnHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     private void Update()
     {
+        if (id >= GameManager.Instance.pickedFiches.Count) return;
+
         if(GameManager.Instance.candidatsScreen.activeInHierarchy && !isUpdated)
         {
             metier = GameManager.Instance.pickedFiches[id].poste;
