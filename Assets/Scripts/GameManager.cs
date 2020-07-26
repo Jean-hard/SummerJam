@@ -291,6 +291,12 @@ public class GameManager : MonoBehaviour
 
     public void Replay()
     {
+        PlaySfx(sfxList[1]);
         SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

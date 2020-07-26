@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Candidat_ArtisteGrama_4
   m_EditorClassIdentifier: 
   id: 12
-  metier: 2
+  metier: 6
   avatar: {fileID: -3113149449298087908, guid: 60ff561354709f547b4a037925944f23, type: 3}
   voice: {fileID: 8300000, guid: dbe241d3b982dd1458aed39ab35de996, type: 3}
