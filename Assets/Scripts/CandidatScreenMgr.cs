@@ -61,7 +61,7 @@ public class CandidatScreenMgr : MonoBehaviour
 
     public void UpdateCandidatCounterText()
     {
-        candidatsCounterText.text = string.Format("{0}   {1}", candidatsCounter, GameManager.Instance.pickedCandidats.Count);
+        candidatsCounterText.text = string.Format("{0} / {1}", candidatsCounter, GameManager.Instance.pickedCandidats.Count);
     }
 
     //Affiche l'avatar, joue le son du candidat courrant
@@ -121,7 +121,7 @@ public class CandidatScreenMgr : MonoBehaviour
     {
         GameManager.Instance.StopVoice();
         blamePopUp.SetActive(true);
-        blameCounterText.text = string.Format("{0}   3", blameCounter);        
+        blameCounterText.text = string.Format("{0} / 3", blameCounter);        
         yield return new WaitForSeconds(3f);
         blamePopUp.SetActive(false);
 
