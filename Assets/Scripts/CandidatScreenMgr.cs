@@ -128,6 +128,7 @@ public class CandidatScreenMgr : MonoBehaviour
     public IEnumerator LaunchBlame()
     {
         GameManager.Instance.StopVoice();
+        GameManager.Instance.PlaySfx(GameManager.Instance.sfxList[0]);
         blamePopUp.SetActive(true);
         blameCounterText.text = string.Format("{0} / 3", blameCounter);        
         yield return new WaitForSeconds(3f);
@@ -142,6 +143,7 @@ public class CandidatScreenMgr : MonoBehaviour
     //Vérifie l'exactitude du choix du joueur en fonction du candidat présent
     public void CheckAnswer(Metier metierChoosed)
     {
+        GameManager.Instance.PlaySfx(GameManager.Instance.sfxList[1]);
         if(currentCandidat.metier == metierChoosed)
         {
             //Ajoute des primes
