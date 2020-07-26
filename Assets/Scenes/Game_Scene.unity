@@ -2047,7 +2047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.73291206, b: 0.73291206, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3921,6 +3921,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 293bc5a836aa47940a44fa18870218fc, type: 2}
   - {fileID: 11400000, guid: b308c295b19aa6445b060e1006222e35, type: 2}
   - {fileID: 11400000, guid: 9dc5503bc59331c459878d151b8a6f08, type: 2}
+  - {fileID: 11400000, guid: aca13a36768702647889fc371c92a06b, type: 2}
+  - {fileID: 11400000, guid: 9404963cebce5c1469d87176b4339516, type: 2}
   pickedFiches: []
   pickedCandidats: []
   hoverLogoSpritesList:

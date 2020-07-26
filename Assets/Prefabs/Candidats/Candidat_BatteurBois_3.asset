@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Candidat_BatteurBois_3
   m_EditorClassIdentifier: 
   id: 12
-  metier: 2
+  metier: 5
   avatar: {fileID: -9101522836617692355, guid: 60ff561354709f547b4a037925944f23, type: 3}
   voice: {fileID: 8300000, guid: 3ca15fe787b41d94d8a8e1837bc602fd, type: 3}
