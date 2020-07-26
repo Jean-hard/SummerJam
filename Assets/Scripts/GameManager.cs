@@ -77,11 +77,11 @@ public class GameManager : MonoBehaviour
         {
             if (ficheScreen.activeInHierarchy)
             {
-                timerValue = timerStartValues[0];
+                timerValue = timerStartValues[0] * pickedFiches.Count;
             }
             else if (candidatsScreen.activeInHierarchy)
             {
-                timerValue = timerStartValues[1];
+                timerValue = timerStartValues[1] * pickedCandidats.Count;
             }
             else Debug.Log("Probleme avec le active in hierarchy");
 

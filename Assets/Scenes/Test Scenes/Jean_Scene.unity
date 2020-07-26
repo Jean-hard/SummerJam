@@ -2362,7 +2362,7 @@ MonoBehaviour:
   timerText: {fileID: 1644781897}
   timerStartValues:
   - 5
-  - 60
+  - 20
   fichesMin: 3
   fichesMax: 5
   candidatsMin: 2
