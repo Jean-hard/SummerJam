@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 12
   metier: 9
   avatar: {fileID: 810325795073249215, guid: 60ff561354709f547b4a037925944f23, type: 3}
-  voice: {fileID: 8300000, guid: fca7298d6acb14948a176a0124c8ad7a, type: 3}
+  voice: {fileID: 8300000, guid: a945c1bbc7692a3408ffd643e9cadd08, type: 3}
